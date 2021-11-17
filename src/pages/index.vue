@@ -1,24 +1,25 @@
+<script setup>
+import { ref } from "vue";
+import { useAdvice } from "../composables/pushapi";
+const { advices, search } = useAdvice();
+const searchItem = ref("");
+</script>
+
 <template>
-  
   <div>
-      <input type="text" placeholder="cards" class="w-full py-4 mt-10 text-lg text-center rounded-2xl">
-
-    <div class="grid grid-cols-2 gap-10 pt-8">
-      <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut repellendus quidem praesentium, ipsum soluta mollitia reprehenderit! Voluptates vitae recusandae officia quasi, doloribus praesentium commodi libero dolor ea laudantium explicabo alias?
-      </p>
-
-       <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut repellendus quidem praesentium, ipsum soluta mollitia reprehenderit! Voluptates vitae recusandae officia quasi, doloribus praesentium commodi libero dolor ea laudantium explicabo alias?
-      </p>
-
-       <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut repellendus quidem praesentium, ipsum soluta mollitia reprehenderit! Voluptates vitae recusandae officia quasi, doloribus praesentium commodi libero dolor ea laudantium explicabo alias?
-      </p>
+    <input
+      v-model="searchItem"
+      @change="search(searchItem)"
+      type="text"
+      placeholder="Search an Advise..."
+      class="w-full py-4 mt-16 text-xl text-center rounded-full"
+    />
+    <div class="grid grid-cols-2 gap-16 pt-16">
+      <div v-for="(advice, index) in advices" :key="index">
+        <p>
+          {{ advice.advice }}
+        </p>
+      </div>
     </div>
-
-</div>
-
-
-
+  </div>
 </template>

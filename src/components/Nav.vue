@@ -1,7 +1,7 @@
 <template>
-  <div class="text-green-200 bg-green-800">
-    <div class="container flex items-center justify-between mx-auto">
-      <h1 class="text-3xl font-thin tracking-tighter">
+  <div class="text-red-400 bg-indigo-600">
+    <div class="container flex items-center justify-center mx-auto">
+      <h1 class="text-4xl font-medium tracking-tight">
         <span class="font-normal">API</span>
       </h1>
       

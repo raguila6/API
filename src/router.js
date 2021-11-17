@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import Index from "./pages/index.vue";
-iimport NotFound from "./pages/404.vue";
+import NotFound from "./pages/404.vue";
 
 const routes = [
   {
